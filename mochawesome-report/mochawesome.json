@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-23T14:05:41.064Z",
+    "end": "2025-10-23T14:05:45.164Z",
+    "duration": 4100,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "695715fd-7eda-4cea-9187-245b19165fa4",
+      "title": "",
+      "fullFile": "C:\\Users\\Cheps Neo\\Documents\\tugas QA\\web-ui-automation-saucedemo\\tests\\test-saucedemo.js",
+      "file": "\\tests\\test-saucedemo.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61894748-f36c-4a77-8eca-8e5193b5e878",
+          "title": "SauceDemo Test Suite",
+          "fullFile": "C:\\Users\\Cheps Neo\\Documents\\tugas QA\\web-ui-automation-saucedemo\\tests\\test-saucedemo.js",
+          "file": "\\tests\\test-saucedemo.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"SauceDemo Test Suite\"",
+              "fullTitle": "SauceDemo Test Suite \"before all\" hook in \"SauceDemo Test Suite\"",
+              "timedOut": false,
+              "duration": 712,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Konfigurasi Chrome agar berjalan dalam mode headless (tanpa tampilan browser)\nconst chrome = require('selenium-webdriver/chrome');\nconst options = new chrome.Options();\noptions.addArguments('--headless'); // Menjalankan browser di background\n// Inisialisasi driver dengan browser Chrome dan opsi headless\ndriver = await new Builder().forBrowser('chrome').setChromeOptions(options).build();",
+              "err": {},
+              "uuid": "48487ee9-2699-43d8-a5e0-e127365024c2",
+              "parentUUID": "61894748-f36c-4a77-8eca-8e5193b5e878",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"SauceDemo Test Suite\"",
+              "fullTitle": "SauceDemo Test Suite \"after all\" hook in \"SauceDemo Test Suite\"",
+              "timedOut": false,
+              "duration": 2015,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.sleep(2000); // Delay sebentar agar proses stabil sebelum quit\nawait driver.quit(); // Menutup browser dan mengakhiri sesi",
+              "err": {},
+              "uuid": "945d06ab-5562-439d-ad40-3559ab5bab74",
+              "parentUUID": "61894748-f36c-4a77-8eca-8e5193b5e878",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Login dan cek logo",
+              "fullTitle": "SauceDemo Test Suite Login dan cek logo",
+              "timedOut": false,
+              "duration": 1095,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Buka halaman login SauceDemo\nawait driver.get('https://www.saucedemo.com');\n// Isi username dan password\nawait driver.findElement(By.css('[data-test=\"username\"]')).sendKeys('standard_user');\nawait driver.findElement(By.xpath('//*[@data-test=\"password\"]')).sendKeys('secret_sauce');\n// Klik tombol login\nawait driver.findElement(By.className('submit-button')).click();\n// Cari elemen logo dan ambil teksnya\nconst logo = await driver.findElement(By.className('app_logo'));\nconst logoText = await logo.getText();\n// Validasi bahwa teks logo adalah \"Swag Labs\"\nassert.strictEqual(logoText, 'Swag Labs');",
+              "err": {},
+              "uuid": "0b6daf52-a54b-424c-8ec6-afa0b7ab07e6",
+              "parentUUID": "61894748-f36c-4a77-8eca-8e5193b5e878",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Urutkan produk dari A-Z",
+              "fullTitle": "SauceDemo Test Suite Urutkan produk dari A-Z",
+              "timedOut": false,
+              "duration": 272,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Buka halaman login lagi\nawait driver.get('https://www.saucedemo.com');\n// Login seperti sebelumnya\nawait driver.findElement(By.css('[data-test=\"username\"]')).sendKeys('standard_user');\nawait driver.findElement(By.xpath('//*[@data-test=\"password\"]')).sendKeys('secret_sauce');\nawait driver.findElement(By.className('submit-button')).click();\n// Temukan dropdown sorting dan pilih opsi \"Name (A to Z)\"\nconst dropdown = await driver.findElement(By.css('.product_sort_container'));\nawait dropdown.sendKeys('Name (A to Z)');\n// Ambil nama produk pertama setelah sorting\nconst firstProduct = await driver.findElement(By.css('.inventory_item_name'));\nconst productName = await firstProduct.getText();\n// Validasi bahwa nama produk tidak kosong\nassert.ok(productName.length > 0);",
+              "err": {},
+              "uuid": "e7e84510-4fe8-4798-acdb-afbe7e65b392",
+              "parentUUID": "61894748-f36c-4a77-8eca-8e5193b5e878",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b6daf52-a54b-424c-8ec6-afa0b7ab07e6",
+            "e7e84510-4fe8-4798-acdb-afbe7e65b392"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1367,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.0"
+    }
+  }
+}
