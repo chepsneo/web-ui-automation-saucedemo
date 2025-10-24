@@ -1,0 +1,14 @@
+# Folder dependensi npm
+node_modules/
+
+# Folder asset report Mochawesome (berisi CSS/JS yang besar)
+mochawesome-report/assets/
+
+# Folder screenshot (jika digunakan di tugas berikutnya)
+screenshots/
+
+# File report HTML (jika ingin disimpan lokal saja)
+report.html
+
+# File report JSON (jika tidak perlu di-push)
+mochawesome-report/mochawesome.json
