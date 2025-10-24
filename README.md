@@ -1,8 +1,5 @@
 ﻿# web-ui-automation-saucedemo
 # web-ui-automation-saucedemo
-Siap Cheps! Berikut versi sederhana `README.md` dalam Bahasa Indonesia, cocok untuk dokumentasi GitHub dan LMS:
-
----
 
 ## 📄 README.md — Automasi Web UI: SauceDemo
 
@@ -42,5 +39,6 @@ Report  tersimpan sebagai `report.html`.
 - `package.json` → konfigurasi project
 - `README.md` → dokumentasi
 - `.gitignore` → file yang tidak dipush ke GitHub
+
 
 
